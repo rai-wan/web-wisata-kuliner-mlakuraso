@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Menggunakan Bootstrap dari file lokal -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #b8acac 0%, #d6d6d6);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+        .container {
+            max-width: 500px;
+            margin-top: 100px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        h2 {
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #ff6b6b;
+            border-color: #ff6b6b;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #ff4757;
+            box-shadow: 0 4px 10px rgba(255, 75, 75, 0.5);
+        }
+        .input-group-text {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h2>Daftar</h2>
+        <form>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    <input type="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input type="text" class="form-control" id="username" placeholder="Masukkan Username" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan Password" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="confirm-password" class="form-label">Konfirmasi Password</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Masukkan Password" required>
+                </div>
+            </div>
+            <a href="login.html" class="btn btn-primary w-100">
+                <i class="fas fa-sign-in-alt"></i> Masuk
+            </button>
+        </form>
+    </div>
+    <!-- Menggunakan Bootstrap JS dari file lokal -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

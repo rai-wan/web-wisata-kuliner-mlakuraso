@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #b8acac 0%, #d6d6d6);
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            margin-top: 100px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .login-container h2 {
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #ff6b6b;
+            border-color: #ff6b6b;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #ff4757;
+            box-shadow: 0 4px 10px rgba(255, 75, 75, 0.5);
+        }
+        .link-primary {
+            color: #ff6b6b;
+            transition: color 0.3s;
+        }
+        .link-primary:hover {
+            color: #ff4757;
+        }
+        .link-red {
+            color: red;
+            transition: color 0.3s;
+        }
+        .link-red:hover {
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container text-center">
+        <h2>Login</h2>
+        <form>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input type="text" class="form-control" id="username" placeholder="Masukkan username" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                </div>
+            </div>
+            <div class="mb-3 form-check text-start">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Ingat Saya</label>
+            </div>
+            <a href="dashboard.html" class="btn btn-primary w-100">
+                <i class="fas fa-sign-in-alt"></i> Masuk
+            </a>
+        </form>
+        <p class="mt-3">
+            <a href="dashboard.html" class="link-red">Lupa Password?</a>
+        </p>
+        <p>Belum punya akun? <a href="daftar.html" class="link-red">Daftar Sekarang</a></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
