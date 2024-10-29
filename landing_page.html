@@ -6,6 +6,38 @@
     <title>Login - Mlakuraso</title>
     <!-- Menyertakan stylesheet eksternal untuk halaman landing page -->
     <link rel="stylesheet" href="style_landing_page.css">
+    <style>
+        /* Simple styles for demonstration */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .btn-primary, .btn-secondary {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -35,9 +67,9 @@
             <p>Jelajahi dunia kuliner Nusantara dan event-event menarik lainnya</p>
             <div class="button-group">
                 <!-- Tombol utama untuk mengarahkan ke halaman masuk (Masuk) -->
-                <button class="btn-primary">Masuk</button>
+                <button class="btn-primary" onclick="navigateTo('dasboard.html')">Masuk</button>
                 <!-- Tombol sekunder untuk mengarahkan ke halaman login -->
-                <button class="btn-secondary">Login</button>
+                <button class="btn-secondary" onclick="navigateTo('loginform.html')">Login</button>
             </div>
         </div>
         <div class="illustration">
@@ -45,5 +77,11 @@
             <img src="rumah_makan.png" alt="Illustration">
         </div>
     </main>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
 </body>
 </html>
