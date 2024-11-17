@@ -14,18 +14,18 @@
         /* Header */
         .header {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            background-color: #fff;
-            font-size: 1rem;
+            justify-content: left;
+            align-items: left;
+            padding: 5px;
+            font-size: 35px;
             font-weight: bold;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            color: #ffffff;
             position: sticky;
             top: 0;
             z-index: 10;
+            text-decoration: none; /* Menghilangkan garis bawah */
         }
-
+        
 
         /* Search Bar */
         .search-bar {
