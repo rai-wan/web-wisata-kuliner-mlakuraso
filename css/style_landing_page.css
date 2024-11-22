@@ -1,0 +1,132 @@
+/* Mengatur margin, padding, dan box model untuk semua elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mengatur margin, padding, dan ukuran penuh untuk HTML dan body */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Mengatur gaya dasar body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Warna latar belakang body */
+    color: #333; /* Warna teks dasar */
+    display: flex;
+    flex-direction: column; /* Mengatur layout sebagai kolom */
+    align-items: center; /* Memposisikan elemen secara horizontal di tengah */
+    justify-content: center; /* Memposisikan elemen secara vertikal di tengah */
+    min-height: 100vh; /* Mengatur tinggi minimum body agar mencakup seluruh viewport */
+}
+
+/* Header bagian atas halaman */
+header {
+    width: 100%; /* Lebar penuh untuk header */
+    padding: 0 50px;
+    margin: 0;
+    display: flex; /* Flexbox untuk layout elemen di dalam header */
+    justify-content: space-between; /* Jarak antar elemen (logo dan navigasi) */
+    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+}
+
+/* Gaya logo */
+.logo h1 {
+    font-size: 1.8em; /* Ukuran font logo */
+    font-weight: bold; /* Ketebalan font untuk logo */
+}
+
+/* Gaya tautan dalam navigasi */
+nav a {
+    margin-left: 20px; /* Jarak antar tautan */
+    text-decoration: none; /* Menghilangkan garis bawah tautan */
+    color: #333; /* Warna teks tautan */
+    font-size: 1em; /* Ukuran font tautan */
+}
+
+/* Gaya tautan saat diarahkan dengan kursor */
+nav a:hover {
+    color: #555; /* Warna tautan saat dihover */
+}
+
+/* Gaya untuk bagian utama halaman */
+main {
+    display: flex; /* Flexbox untuk layout elemen di dalam main */
+    justify-content: space-between; /* Jarak antar elemen (pesan dan ilustrasi) */
+    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+    width: 80%; /* Lebar main relatif terhadap layar */
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Gaya untuk pesan selamat datang */
+.welcome-message {
+    max-width: 600px; /* Lebar maksimum kontainer pesan */
+}
+
+/* Gaya teks judul selamat datang */
+.welcome-message h2 {
+    font-size: 1.8em; /* Ukuran font judul */
+    font-weight: bold; /* Ketebalan font judul */
+    margin-bottom: 10px; /* Jarak bawah untuk judul */
+}
+
+/* Gaya teks paragraf dalam pesan selamat datang */
+.welcome-message p {
+    font-size: 1.2em; /* Ukuran font paragraf */
+    margin-bottom: 15px; /* Jarak bawah untuk paragraf */
+}
+
+/* Gaya grup tombol dalam pesan selamat datang */
+.button-group {
+    margin-top: 20px; /* Jarak atas grup tombol */
+}
+
+/* Gaya dasar untuk semua tombol */
+button {
+    font-size: 1.2em; /* Ukuran font tombol */
+    padding: 10px 30px; /* Ruang dalam tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 10px; /* Membuat sudut tombol melengkung */
+    cursor: pointer; /* Menampilkan kursor pointer saat diarahkan */
+}
+
+/* Gaya tombol utama (Masuk) */
+.btn-primary {
+    background-color: #000; /* Warna latar belakang tombol utama */
+    color: white; /* Warna teks tombol utama */
+    margin-right: 10px; /* Jarak kanan untuk tombol utama */
+}
+
+/* Gaya tombol sekunder (Login) */
+.btn-secondary {
+    background-color: #d3d3d3; /* Warna latar belakang tombol sekunder */
+    color: black; /* Warna teks tombol sekunder */
+}
+
+/* Gaya ilustrasi gambar di halaman utama */
+.illustration img {
+    width: 100%; /* Lebar penuh untuk gambar */
+    height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
+    display: block; /* Mengatur gambar sebagai blok */
+}
+
+/* Gaya responsif untuk layar kecil */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Mengubah layout ke arah kolom pada layar kecil */
+    }
+
+    .welcome-message {
+        text-align: center; /* Menyelaraskan teks ke tengah pada layar kecil */
+    }
+
+    .illustration img {
+        width: 200px; /* Ukuran gambar dikurangi pada layar kecil */
+    }
+}
