@@ -4,19 +4,33 @@ body {
     padding: 0;
     background-color: #FFC0CB;
 }
-
-/* Header Styles */
-header {
-    position: relative;
-    width: 100%;
-    height: 350px; /* Tinggi gambar header */
-    overflow: hidden;
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    position: relative; 
 }
 
-header img {
+.header title {
+width: 100%;
+height: 350px; /* Tinggi gambar header */
+overflow: hidden;
+}
+
+.header img {
     width: 100%;
-    height: 100%;
+    height: 300%;
     object-fit: cover; /* Agar gambar menyesuaikan ukuran tanpa merusak rasio */
+    object-position: top;
 }
 
 .title {
@@ -45,7 +59,6 @@ header .item-lainnya {
     position: absolute;
     top: 10px;
     left: 15px;
-    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang transparan */
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
@@ -56,6 +69,7 @@ header .item-lainnya {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan */
     transition: all 0.3s ease-in-out;
     z-index: 1;
+    text-decoration: none; /* Menghilangkan garis bawah */
 }
 
 header .item-lainnya:hover {
