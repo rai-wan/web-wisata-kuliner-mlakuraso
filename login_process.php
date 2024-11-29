@@ -1,35 +1,23 @@
 <?php
-// Koneksi ke database
-$conn = new mysqli('localhost', 'root', '', 'mlakuraso');
+require 'koneksi.php'; // Pastikan koneksi berhasil di sini
+$username = $_POST["username"];
+$password = $_POST["password"];
 
-// Cek koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
+// Menggunakan prepared statement untuk keamanan
+$query_sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+$stmt = mysqli_prepare($conn, $query_sql);
+mysqli_stmt_bind_param($stmt, "ss", $username, $password);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
-// Ambil data dari form
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-// Cek apakah username ada di database
-$sql = "SELECT * FROM users WHERE username = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $username);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows > 0) {
-    // Ambil data user
-    $user = $result->fetch_assoc();
-    if (password_verify($password, $user['password'])) {
-        echo "Login berhasil! Selamat datang, " . htmlspecialchars($user['username']);
-    } else {
-        echo "Password salah.";
-    }
+if (mysqli_num_rows($result) > 0) {
+    header("Location: dasboard.php");
+    exit();
 } else {
-    echo "Username tidak ditemukan.";
+    echo "<center><h1>Username atau Password Anda Salah. Silahkan Coba Login Kembali.</h1>
+            <button><strong><a href='loginform.php'>Login</a></strong></button></center>";
 }
 
-$stmt->close();
-$conn->close();
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
 ?>
