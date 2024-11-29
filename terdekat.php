@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="style_terdekat.css">
@@ -30,7 +33,7 @@
         <div class="container">
             <!-- Card 1 -->
             <div class="card">
-                <img src="Welcome_to_Batam.JPG" alt="Welcome to Batam">
+                <img src="img/Welcome_to_Batam.JPG" alt="Welcome to Batam">
                 <div class="card-body">
                     <h2 class="card-title">Welcome To Batam</h2>
                     <p class="card-text">Lokasi kuliner jajanan yang bersifat angkringan.</p>
@@ -52,7 +55,7 @@
             </div>
             <!-- Card 3 -->
             <div class="card">
-                <img src="harbourbay.batam.JPEG" alt="Harbour Bay">
+                <img src="img/harbourbay.batam.JPEG" alt="Harbour Bay">
                 <div class="card-body">
                     <h2 class="card-title">Harbour Bay</h2>
                     <p class="card-text">Deretan restoran hidangan laut segar.</p>
@@ -63,7 +66,7 @@
                 </div>
             <!-- Card 4 -->
             <div class="card">
-                <img src="jembatan-barelang.JPEG" alt="Jembatan Barelang">
+                <img src="img/jembatan-barelang.JPEG" alt="Jembatan Barelang">
                 <div class="card-body">
                     <h2 class="card-title">Jembatan Barelang</h2>
                     <p class="card-text">Aneka kuliner khas melayu.</p>
@@ -74,7 +77,7 @@
                 </div>
             <!-- Card 5 -->
             <div class="card">
-                <img src="tanjung-piayu-laut.JPG" alt="Tanjung Piayu Laut">
+                <img src="img/tanjung-piayu-laut.JPG" alt="Tanjung Piayu Laut">
                 <div class="card-body">
                     <h2 class="card-title">Harbour Bay</h2>
                     <p class="card-text">Deretan restoran seafood yang lezat.</p>
