@@ -1,14 +1,14 @@
 <?php
 $servername = "localhost";
+$database = "mlakuraso";
 $username = "root";
 $password = "";
-$dbname = "mlakuraso";
 
-// Buat koneksi
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $database);
 
-// Cek koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+if (!$conn) {
+    die("Koneksi Gagal: " . mysqli_connect_error());
+} else {
+    // echo "Koneksi Berhasil"; // Hapus atau komentar untuk produksi
 }
 ?>
