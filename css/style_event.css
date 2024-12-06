@@ -80,7 +80,7 @@ body {
             object-fit: cover;
         }
         .rule-title {
-            width: 100%;
+            width: 200%;
             font-weight: bold;
             color: #8b0000;
             margin-bottom: 10px;
