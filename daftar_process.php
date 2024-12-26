@@ -1,29 +1,21 @@
 <?php
-session_start();
 include 'koneksi.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Mengambil dan mensanitasi input pengguna
-    $fullname = mysqli_real_escape_string($koneksi, $_POST['fullname']);
-    $username = mysqli_real_escape_string($koneksi, $_POST['username']);
-    $gender = mysqli_real_escape_string($koneksi, $_POST['gender']);
-    $email = mysqli_real_escape_string($koneksi, $_POST['email']);
-    $password = mysqli_real_escape_string($koneksi, $_POST['password']);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $fullname = $_POST['fullname'];
+    $username = $_POST['username'];
+    $gender = $_POST['gender'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $role = $_POST['role'];
 
+    $query = "INSERT INTO users (fullname, username, gender, password, role) VALUES ('$fullname', '$username', '$gender', '$password', '$role')";
 
-    // Hash password untuk keamanan
-
-    // Query untuk menyimpan data pengguna ke dalam database
-    $query = "INSERT INTO users (fullname, username, gender, email,  password) VALUES ('$fullname', '$username', '$gender', '$email', '$password')";
-    $data = mysqli_query($koneksi, $query);
-
-    if ($data) {
-        // Pendaftaran berhasil
-        $_SESSION['username'] = $username;  // Simpan username di session
-        header('Location: loginform.php');  // Arahkan ke halaman login
+    if (mysqli_query($koneksi, $query)) {
+        // Redirect ke login.php setelah berhasil mendaftar
+        header('Location: loginform.php');
         exit();
     } else {
-        // Penanganan kesalahan
-        $error = 'Pendaftaran gagal. Error: ' ;
+        echo "Error: " . mysqli_error($koneksi);
     }
 }
+?>
