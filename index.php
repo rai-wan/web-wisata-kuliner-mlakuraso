@@ -62,8 +62,8 @@
     <main>
         <div class="welcome-message">
             <!-- Pesan penyambutan pengguna -->
-            
-            
+
+
             <?php
                 $pengunjung = "Food Lover";
 
@@ -76,7 +76,6 @@
 
             <div class="button-group">
                 <!-- Tombol utama untuk mengarahkan ke halaman masuk (Masuk) -->
-                <button class="btn-primary" onclick="navigateTo('dasboard.php')">Masuk</button>
                 <!-- Tombol sekunder untuk mengarahkan ke halaman login -->
                 <button class="btn-secondary" onclick="navigateTo('loginform.php')">Login</button>
             </div>
