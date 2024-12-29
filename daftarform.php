@@ -98,6 +98,7 @@
     <select id="role" name="role" required>
         <option value="user">User</option>
         <option value="admin">Admin</option>
+        <option value="owner">Owner</option>
     </select>
 
     <button type="submit">Register</button>
