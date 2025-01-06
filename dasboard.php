@@ -280,7 +280,7 @@ body {
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">MLAKURAS</div>
+            <div class="logo">MLAKURASO</div>
             <ul>
                 <li><a href="trending.php">Rekomendasi</a></li>
                 <li><a href="event.php">Event</a></li>
