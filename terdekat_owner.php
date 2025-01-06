@@ -134,7 +134,7 @@ body {
 <body>
     <!-- Header -->
     <div class="logo">
-        <a href="dasboard.php">>>────୨Mlakurasoৎ────<<</a>
+        <a href="dasboard_owner.php">>>────୨Mlakurasoৎ────<<</a>
     </div>
 
     <!-- Hero Section -->

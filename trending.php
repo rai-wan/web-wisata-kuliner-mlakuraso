@@ -5,9 +5,9 @@ $query = "SELECT tm.*,
             (SELECT GROUP_CONCAT(cr.komentar SEPARATOR '<br>')
              FROM komentar_rating cr
              WHERE cr.id_tempat_makan = tm.id) AS komentar,
-            (SELECT MAX(cr.rating)
+            (SELECT AVG(cr.rating)  -- Menghitung rata-rata rating
              FROM komentar_rating cr
-             WHERE cr.id_tempat_makan = tm.id) AS rating
+             WHERE cr.id_tempat_makan = tm.id) AS average_rating
         FROM tempat_makan tm
         WHERE tm.trending = 1";
 
@@ -28,15 +28,6 @@ $result = mysqli_query($koneksi, $query);
             background-size: cover;
             background-position: center;
             color: white;
-        }
-
-        .header {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            text-align: center;
         }
 
         .container {
@@ -70,12 +61,12 @@ $result = mysqli_query($koneksi, $query);
         }
 
         .comment-list {
-            list-style-type: none; /* Menghilangkan bullet pada list */
-            padding: 0; /* Menghilangkan padding */
+            list-style-type: none;
+            padding: 0;
         }
 
         .comment-list li {
-            margin-bottom: 10px; /* Jarak antar komentar */
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -96,11 +87,11 @@ $result = mysqli_query($koneksi, $query);
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo htmlspecialchars($data['nama_tempat']); ?></h5>
                                 <p class="card-text"><?php echo htmlspecialchars($data['deskripsi']); ?></p>
+                                <p class="card-text"><strong>Rata-rata Rating: <?php echo number_format($data['average_rating'], 1); ?></strong></p> <!-- Menampilkan rata-rata rating -->
                                 <a href="<?php echo htmlspecialchars($data['link_google_map']); ?>" target="_blank" class="btn btn-primary btn-sm">Lihat di Google Maps</a>
                                 <h6 class="mt-3">Komentar:</h6>
                                 <ul class="comment-list">
                                     <?php
-                                    // Tampilkan semua komentar
                                     $komentarList = explode('<br>', $data['komentar']);
                                     if (!empty($data['komentar'])) {
                                         foreach ($komentarList as $komentar) {
@@ -111,6 +102,12 @@ $result = mysqli_query($koneksi, $query);
                                     }
                                     ?>
                                 </ul>
+
+                                <!-- Form Hapus dari Trending -->
+                                <form action="hapus_trending.php" method="POST" class="d-inline">
+                                    <input type="hidden" name="id_tempat_makan" value="<?php echo $data['id']; ?>">
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus tempat ini dari trending?')">Hapus dari Trending</button>
+                                </form>
                             </div>
                         </div>
                     </div>

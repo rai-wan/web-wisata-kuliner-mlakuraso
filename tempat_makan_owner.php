@@ -15,7 +15,7 @@ $result = mysqli_query($koneksi, $query);
     <title>Trending Tempat Makan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        body {
+         body {
     background-image: url('img/background.jpg');
     /* Ganti dengan path gambar */
     background-size: cover;
@@ -208,7 +208,7 @@ input[type="text"]:focus {
 <body>
 
     <div class="logo">
-        <a href="dasboard.php">>>────୨Mlakurasoৎ────<<</a>
+    <a href="dasboard_owner.php">>>────୨Mlakurasoৎ────<<</a>
     </div>
 
     <div class="search-container">
@@ -220,39 +220,39 @@ input[type="text"]:focus {
     </div>
 
     <!-- Modal Tambah Tempat Makan -->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Tambah Tempat Makan</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span>&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="tambah_tempat_makan.php" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="nama_tempat">Nama Tempat</label>
-                        <input type="text" class="form-control" name="nama_tempat" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="deskripsi">Deskripsi</label>
-                        <textarea class="form-control" name="deskripsi" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="gambar">Gambar</label>
-                        <input type="file" class="form-control" name="gambar" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="link_google_map">Link Google Map</label>
-                        <input type="text" class="form-control" name="link_google_map" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Tambah</button>
-                </form>
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Tambah Tempat Makan</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="tambah_tempat_makan_owner.php" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="nama_tempat">Nama Tempat</label>
+                            <input type="text" class="form-control" name="nama_tempat" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi</label>
+                            <textarea class="form-control" name="deskripsi" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="gambar">Gambar</label>
+                            <input type="file" class="form-control" name="gambar" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="link_google_map">Link Google Map</label>
+                            <input type="text" class="form-control" name="link_google_map" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <div class="row">
         <?php
@@ -266,14 +266,8 @@ input[type="text"]:focus {
                             <p class="card-text"><?= htmlspecialchars($data['deskripsi']); ?></p>
                             <a href="<?= htmlspecialchars($data['link_google_map']); ?>" target="_blank" class="btn btn-primary btn-sm">Lihat di Google Maps</a>
 
-                            <div class="mt-2">
-                                <a href="edit_tempat_makan.php?id=<?= $data['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="hapus_tempat_makan.php" method="POST" class="d-inline">
-                                    <input type="hidden" name="id_tempat_makan" value="<?= $data['id']; ?>">
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus tempat ini?')">Hapus</button>
-                                </form>
-                            </div>
-                            <form action="tandai_favorit.php" method="POST" class="d-inline mt-2">
+                            <!-- Tombol Tandai Favorit -->
+                            <form action="tandai_favorit_owner.php" method="POST" class="d-inline mt-2">
                                 <input type="hidden" name="id_tempat_makan" value="<?= $data['id']; ?>">
                                 <button type="submit" class="btn btn-warning btn-sm">
                                     <?php if ($data['favorit']): ?>
@@ -281,14 +275,6 @@ input[type="text"]:focus {
                                     <?php else: ?>
                                         ☆ Tandai Favorit
                                     <?php endif; ?>
-                                </button>
-                            </form>
-
-                            <!-- Tombol Jadikan Trending -->
-                            <form action="jadikan_trending.php" method="POST" class="d-inline mt-2">
-                                <input type="hidden" name="id_tempat_makan" value="<?= $data['id']; ?>">
-                                <button type="submit" class="btn btn-success btn-sm">
-                                    Jadikan Trending
                                 </button>
                             </form>
                         </div>

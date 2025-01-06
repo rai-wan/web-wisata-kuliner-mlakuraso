@@ -156,6 +156,25 @@ $result = mysqli_query($koneksi, $query);
                                     <?php endif; ?>
                                 </button>
                             </form>
+
+                            <!-- Form untuk menambahkan komentar -->
+                            <form action="tambah_komentar_rating_user.php" method="POST" class="mt-3">
+                                <input type="hidden" name="id_tempat_makan" value="<?= $data['id']; ?>">
+                                <div class="mb-2">
+                                    <textarea name="komentar" class="form-control" rows="3" placeholder="Tulis komentar..."></textarea>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="rating">Rating:</label>
+                                    <select name="rating" class="form-select">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-sm">Kirim Komentar</button>
+                            </form>
                         </div>
                     </div>
                 </div>

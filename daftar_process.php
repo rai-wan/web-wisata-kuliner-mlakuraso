@@ -7,9 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $gender = $_POST['gender'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $role = $_POST['role'];
-
-    $query = "INSERT INTO users (fullname, username, gender, password, role) VALUES ('$fullname', '$username', '$gender', '$password', '$role')";
-
+// Lakukan penyimpanan ke database dengan role yang baru
+$query = "INSERT INTO users (fullname, username, gender, password, role) VALUES ('$fullname', '$username', '$gender', '$password', '$role')";
     if (mysqli_query($koneksi, $query)) {
         // Redirect ke login.php setelah berhasil mendaftar
         header('Location: loginform.php');

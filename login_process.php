@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Redirect berdasarkan role
             if ($_SESSION['role'] === 'admin') {
                 header('Location: dasboard.php');
+            } elseif ($_SESSION['role'] === 'owner') {
+                header('Location: dasboard_owner.php'); // Redirect untuk Owner
             } else {
                 header('Location: dasboard_user.php');
             }
