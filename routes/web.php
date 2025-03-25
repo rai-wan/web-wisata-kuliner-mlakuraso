@@ -34,3 +34,6 @@ use App\Http\Controllers\ListBarangController;
 
 Route::get('/barang', [ListBarangController::class, 'tampilkan']);
 
+Route::get('/terdekat_view', function () {
+    return view('terdekat_view');
+    });
