@@ -34,6 +34,18 @@ use App\Http\Controllers\ListBarangController;
 
 Route::get('/barang', [ListBarangController::class, 'tampilkan']);
 
+// punya didan
 Route::get('/terdekat_view', function () {
     return view('terdekat_view');
     });
+// untuk terdekat
+Route::get('/terdekat_view', [terdekatController::class, 'index']);
+
+// untuk loginform (didan)
+    Route::get('/loginform', function () {
+        return view('loginform');
+        });
+
+// untuk loginform (didan)
+Route::get('/loginform', [loginFormController::class, 'index']);
+
